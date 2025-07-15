@@ -130,3 +130,9 @@ CACHES = {
     }
 }
 
+CELERY_BEAT_SCHEDULE = {
+    'detect-suspicious-ips-every-hour': {
+        'task': 'ip_tracking.tasks.detect_suspicious_ips',
+        'schedule': 3600.0,  # every 1 hour
+    },
+}
