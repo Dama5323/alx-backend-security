@@ -7,3 +7,10 @@ class RequestLog(models.Model):
 
     def __str__(self):
         return f"{self.ip_address} accessed {self.path} at {self.timestamp}"
+
+class BlockedIP(models.Model):
+    ip_address = models.GenericIPAddressField(unique=True)
+
+    def __str__(self):
+        return self.ip_address
+
